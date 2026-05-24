@@ -164,7 +164,7 @@ Topkapı Üniversitesi - PP214: Programlamada Yeni Eğilimler & BTE208: Bilgisay
 | :--- | :--- | :--- |
 | **ChatGPT (GPT-4o)** | • Problem tanımı ve MVP özelliklerinin belirlenmesi.<br>• Kullanıcı yolculuğu (User Journey) senaryolarının simülasyonu. | Fikir Geliştirme & Konsept |
 | **Midjourney & Gemini Image** | • Uygulamanın modern bento grid arayüz tasarımı için görsel konsept mockuplarının üretilmesi.<br>• Marka yeşili Material 3 renk şemasının tespiti. | Görsel Tasarım & Mockup |
-| **Claude 3.5 Sonnet & Antigravity** | • Riverpod durum yöneticileri ve Hive NoSQL yerel veritabanı servis kodlarının yazılması.<br>• Speech-to-Text ses algılama asistan kod mimarisinin inşası. | AI Destekli Kod Üretimi |
+| **Claude 4.7 Sonnet & Antigravity** | • Riverpod durum yöneticileri ve Hive NoSQL yerel veritabanı servis kodlarının yazılması.<br>• Speech-to-Text ses algılama asistan kod mimarisinin inşası. | AI Destekli Kod Üretimi |
 | **Groq Cloud (Llama-3)** | • Uygulama içerisinde çalışan asenkron yiyecek detay çeviri motoru.<br>• Kullanıcının dolabındaki malzemelere göre anlık sıfır atık yemek tarifleri hazırlayan yapay zekâ şefi. | Üretken Veri & İçerik Motoru |
 
 ---
@@ -176,7 +176,7 @@ Proje geliştirme sürecinde en başarılı sonuçları veren ve kod tabanında 
 ### 1. Görsel Arayüz (UI) Üretim Promptu (Midjourney)
 > **Prompt:** `A premium and modern mobile app user interface for a sustainable kitchen and smart fridge tracker. Bento grid card layout, glassmorphic UI elements, soft forest green and clean white color palette, Material 3 design guidelines, dynamic micro-animations look, high-fidelity mockup --ar 9:16 --v 6.0`
 
-### 2. Kod Üretim Promptu (Claude 3.5 Sonnet / Antigravity)
+### 2. Kod Üretim Promptu (Claude 4.7 Sonnet / Antigravity)
 > **Prompt:** `Write a robust Flutter StateNotifier using Riverpod v2 and code generation. The state should manage a list of FoodItem models retrieved from FatSecret API. Implement a dynamic priority sorting algorithm in Dart that automatically categorizes food items into: Meals (Priority 1) if name contains cooked keywords, Soups (Priority 2) if name contains soup keywords, and Others (Priority 3) for raw ingredients and fruits. Ensure safe try-catch blocks and memory leak protection.`
 
 ### 3. İçerik ve Tarif Üretim Master Promptu (Groq Cloud LLM)
