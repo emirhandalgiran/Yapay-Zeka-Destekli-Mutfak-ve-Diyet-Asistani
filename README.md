@@ -7,7 +7,9 @@
 [![AI Powered](https://img.shields.io/badge/AI-Groq%20%7C%20Llama3-orange?style=for-the-badge&logo=openai&logoColor=white)](https://groq.com)
 [![Academic Status](https://img.shields.io/badge/Topkapı%20Üniversitesi-Final%20Ödevi-green?style=for-the-badge)](STELLAR_ACADEMIC_DOCUMENTATION.md)
 
-> **Evsel gıda israfını sıfırlamak ve mutfak alışkanlıklarınızı daha sürdürülebilir, reaktif ve eğlenceli hale getirmek için tasarlanmış, yapay zekâ destekli ve oyunlaştırma (gamification) odaklı Enterprise (Kurumsal) düzeyde mobil uygulama ekosistemi.**
+> **Topkapı Üniversitesi - PP214: Programlamada Yeni Eğilimler & BTE208: Bilgisayar Teknolojilerinde Güncel Trendler Dersi Final Projesi**
+> 
+> Evsel gıda israfını sıfırlamak ve mutfak alışkanlıklarınızı daha sürdürülebilir, reaktif ve eğlenceli hale getirmek için tasarlanmış, yapay zekâ destekli ve oyunlaştırma (gamification) odaklı Enterprise (Kurumsal) düzeyde mobil uygulama ekosistemi.
 
 ---
 
@@ -156,7 +158,7 @@ $$AP = \left( \Delta C \times 100 \right) + \left( R \times 50 \right) + \left( 
 
 ## 🤖 Projede Kullanılan Yapay Zekâ (AI) Araçları
 
-Topkapı Üniversitesi yönergesinde belirtilen kriterler doğrultusunda, AuraCook projesinin fikir geliştirme, tasarım, kodlama ve test aşamalarında aşağıdaki yapay zekâ araçlarından doğrudan yararlanılmıştır:
+Topkapı Üniversitesi - PP214: Programlamada Yeni Eğilimler & BTE208: Bilgisayar Teknolojilerinde Güncel Trendler dersi proje yönergesinde belirtilen kriterler doğrultusunda, AuraCook projesinin fikir geliştirme, tasarım, kodlama ve test aşamalarında aşağıdaki yapay zekâ araçlarından doğrudan yararlanılmıştır:
 
 | AI Aracı | Projedeki Kullanım Amacı | Entegrasyon Rolü |
 | :--- | :--- | :--- |

@@ -289,7 +289,7 @@ class AboutScreen extends StatelessWidget {
           ),
           const SizedBox(height: 14),
           Text(
-            'AuraCook, modern teknoloji ve çevresel verimlilik arasındaki sinerjiyi araştıran bir Mobil Uygulama Geliştirme Dersi Final Ödevi Projesi olarak hayata geçirilmiştir. Kullanıcı deneyimi tasarımı ve yapay zeka entegrasyonu üzerine odaklanan bu çalışma, gıda ekosisteminde dijital dönüşümü hedefler.',
+            'AuraCook, modern teknoloji ve çevresel verimlilik arasındaki sinerjiyi araştıran bir PP214 - Programlamada Yeni Eğilimler & BTE208 - Bilgisayar Teknolojilerinde Güncel Trendler Dersi Final Ödevi Projesi olarak hayata geçirilmiştir. Kullanıcı deneyimi tasarımı ve yapay zeka entegrasyonu üzerine odaklanan bu çalışma, gıda ekosisteminde dijital dönüşümü hedefler.',
             style: TextStyle(
               fontSize: 13,
               color: AppColors.onSurfaceVariant,

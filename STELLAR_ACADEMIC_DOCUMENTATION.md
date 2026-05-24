@@ -1,8 +1,8 @@
 # AuraCook: Sürdürülebilir Evsel Gıda Yönetimi ve Akıllı Mutfak Ekosistemi için Mobil Uygulama ve Oyunlaştırma Mimarisi
 
-**Mobil Uygulama Geliştirme Dersi Final Ödevi Raporu**  
+**PP214 - Programlamada Yeni Eğilimler & BTE208 - Bilgisayar Teknolojilerinde Güncel Trendler Dersi Final Ödevi Raporu**  
 **Geliştirici:** Emirhan  
-**Akademik Bağlam:** Topkapı Üniversitesi / Mobil Uygulama Geliştirme Final Ödevi  
+**Akademik Bağlam:** Topkapı Üniversitesi / PP214 & BTE208 Final Ödevi  
 **Proje Durumu:** Yayına Hazır (Production-Ready)  
 
 ---
