@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "832669677192",
+    "project_id": "projeodevi-e1a8f",
+    "storage_bucket": "projeodevi-e1a8f.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:832669677192:android:5bbfc5b1d31284ca4e113d",
+        "android_client_info": {
+          "package_name": "com.auracook"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDDtP7Z61uPXvbVxNJfTKXf1GYJKJLzm58"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:832669677192:android:b8eff928b877854f4e113d",
+        "android_client_info": {
+          "package_name": "com.auracook.aura_cook"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDDtP7Z61uPXvbVxNJfTKXf1GYJKJLzm58"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

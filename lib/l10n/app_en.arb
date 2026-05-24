@@ -1,0 +1,10 @@
+{
+  "@@locale": "en",
+  "appTitle": "AuraCook",
+  "homeTab": "Home",
+  "recipesTab": "Recipes",
+  "auraTab": "Aura",
+  "socialTab": "Social",
+  "reelsTab": "Reels",
+  "profileTab": "Profile"
+}
