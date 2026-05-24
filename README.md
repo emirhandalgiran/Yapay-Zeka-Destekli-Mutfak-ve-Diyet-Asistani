@@ -211,12 +211,12 @@ Projeyi test etmek için hiçbir geliştirme aracı (Flutter SDK, Android Studio
 
 ### 1. Hazır Kurulum Paketleri (Releases) — *Tavsiye Edilen*
 Uygulamanın çalışması için gerekli tüm API anahtarları derleme aşamasında uygulamanın makine koduna güvenli bir şekilde gömülmüştür. Sıfır kurulumla doğrudan çalıştırabilirsiniz:
-*   **Windows Desktop:** Depomuzun sağ menüsündeki [Releases](https://github.com/Emirhan/aura_cook/releases) sekmesine gidin. En güncel sürümün altındaki `auracook-windows.zip` dosyasını indirin. Klasöre çıkartıp doğrudan `aura_cook.exe` dosyasına çift tıklayarak uygulamayı anında açabilirsiniz.
+*   **Windows Desktop:** Depomuzun sağ menüsündeki [Releases](https://github.com/emirhandalgiran/Yapay-Zeka-Destekli-Mutfak-ve-Diyet-Asistani/releases) sekmesine gidin. En güncel sürümün altındaki `auracook-windows.zip` dosyasını indirin. Klasöre çıkartıp doğrudan `aura_cook.exe` dosyasına çift tıklayarak uygulamayı anında açabilirsiniz.
 *   **Android:** Releases sekmesinden `auracook-android.apk` dosyasını telefonunuza indirip saniyeler içinde kurup kullanabilirsiniz.
 
 ### 2. Canlı Web Sürümü (Web Demo)
 Uygulamanın tüm özelliklerini web tarayıcınızda anında test etmek için aşağıdaki butona tıklamanız yeterlidir:
-> 🌐 **[AuraCook Canlı Web Uygulamasını Başlat](https://github.com/Emirhan/aura_cook)** *(Not: Projenizi yayına aldığınız web linkini buraya ekleyebilirsiniz)*
+> 🌐 **[AuraCook Canlı Web Uygulamasını Başlat](https://github.com/emirhandalgiran/Yapay-Zeka-Destekli-Mutfak-ve-Diyet-Asistani)** *(Not: Projenizi yayına aldığınız web linkini buraya ekleyebilirsiniz)*
 
 ---
 
