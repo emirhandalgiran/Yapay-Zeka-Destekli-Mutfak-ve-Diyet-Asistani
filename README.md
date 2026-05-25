@@ -15,7 +15,7 @@
 
 ---
 
-## 📱 Uygulama Ekran Görüntüleri (Google Play Store Tasarımı)
+## 📱 Uygulama Ekran Görüntüleri
 
 AuraCook'un modern, temiz ve sürdürülebilirlik odaklı Material 3 arayüzünü aşağıdaki profesyonel tanıtım kartlarından inceleyebilirsiniz:
 
