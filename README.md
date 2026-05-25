@@ -7,11 +7,30 @@
 [![AI Powered](https://img.shields.io/badge/AI-Groq%20%7C%20Llama3-orange?style=for-the-badge&logo=openai&logoColor=white)](https://groq.com)
 [![Academic Status](https://img.shields.io/badge/Topkapı%20Üniversitesi-Final%20Ödevi-green?style=for-the-badge)](STELLAR_ACADEMIC_DOCUMENTATION.md)
 
+![AuraCook Showcase](assets/images/auracook_hero_banner.png)
+
 > **Topkapı Üniversitesi - PP214: Programlamada Yeni Eğilimler & BTE208: Bilgisayar Teknolojilerinde Güncel Trendler Dersi Final Projesi**
 > 
 > Evsel gıda israfını sıfırlamak ve mutfak alışkanlıklarınızı daha sürdürülebilir, reaktif ve eğlenceli hale getirmek için tasarlanmış, yapay zekâ destekli ve oyunlaştırma (gamification) odaklı Enterprise (Kurumsal) düzeyde mobil uygulama ekosistemi.
 
 ---
+
+## 📱 Uygulama Ekran Görüntüleri (Google Play Store Tasarımı)
+
+AuraCook'un modern, temiz ve sürdürülebilirlik odaklı Material 3 arayüzünü aşağıdaki profesyonel tanıtım kartlarından inceleyebilirsiniz:
+
+| 🌟 Sıfır Atık Hareketi | 🏠 Akıllı Dolap Yönetimi | 👨‍🍳 Yapay Zekâ Şefi |
+| :---: | :---: | :---: |
+| [![Aura Onboarding](assets/images/auracook_promo_onboarding.png)](assets/images/auracook_promo_onboarding.png) | [![Aura Dolabım](assets/images/auracook_promo_smart_fridge.png)](assets/images/auracook_promo_smart_fridge.png) | [![Yapay Zeka Şefi](assets/images/auracook_promo_ai_chef.png)](assets/images/auracook_promo_ai_chef.png) |
+| **Giriş & Onboarding**<br>Mutfakta israfı sıfırlayan akıllı karşılama ve onboarding deneyimi. | **Akıllı Malzeme Takibi**<br>Dolabınızdaki malzemeleri emoji chipleriyle pratik ve reaktif izleyin. | **Sıfır Atık Tarifler**<br>Seçtiğiniz malzemelerle Groq Llama-3 destekli anlık ve sağlıklı tarifler. |
+
+| 💬 Topluluk & Sosyal Medya | 📈 Ekolojik Etki & Başarı |
+| :---: | :---: |
+| [![Aura Sosyal](assets/images/auracook_promo_social.png)](assets/images/auracook_promo_social.png) | [![Mutfak Auram](assets/images/auracook_promo_eco_impact.png)](assets/images/auracook_promo_eco_impact.png) |
+| **Aura Topluluk Akışı**<br>Mutfağınızdaki gıda kurtarma ilhamını diğer şeflerle paylaşın ve etkileşim kurun. | **Karbon & Rozet Takibi**<br>Çöpe gitmekten kurtardığınız gıdaların karbon tasarrufunu izleyin ve rozetler kazanın. |
+
+---
+
 
 ## 📖 İçindekiler (Table of Contents)
 
