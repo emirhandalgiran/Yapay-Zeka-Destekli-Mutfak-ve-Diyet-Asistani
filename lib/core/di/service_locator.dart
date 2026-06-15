@@ -12,8 +12,6 @@ import '../../features/notifications/data/notifications_repository.dart';
 import '../../features/gamification/data/gamification_service.dart';
 import '../database/offline_sync_service.dart';
 
-import 'package:flutter_dotenv/flutter_dotenv.dart';
-
 /// Basit bir Service Locator (Dependency Injection alternatifi).
 /// Projede herhangi bir paket kullanılmadığından global erişim için tasarlandı.
 class ServiceLocator {

@@ -136,7 +136,7 @@ class GroqRateLimiter {
             continue;
           }
 
-          throw Exception('Groq API Error (${response.statusCode}): ${responseBody}');
+          throw Exception('Groq API Error (${response.statusCode}): $responseBody');
         }
       } catch (e) {
         final errorStr = e.toString().toLowerCase();
@@ -187,8 +187,8 @@ class GroqRateLimiter {
 
       if (recentRequests >= _maxRequestsPerMinute || (recentTokens + estimatedTokens) >= _maxTokensPerMinute) {
         // Find earliest timestamp to wait for
-        DateTime? oldestReqTs = _requestTimestamps.isNotEmpty ? _requestTimestamps.first : null;
-        DateTime? oldestTokenTs = _tokenUsageRecords.isNotEmpty ? _tokenUsageRecords.first.timestamp : null;
+        final DateTime? oldestReqTs = _requestTimestamps.isNotEmpty ? _requestTimestamps.first : null;
+        final DateTime? oldestTokenTs = _tokenUsageRecords.isNotEmpty ? _tokenUsageRecords.first.timestamp : null;
         
         DateTime waitTarget = now.add(const Duration(seconds: 2));
         if (oldestReqTs != null && (recentRequests >= _maxRequestsPerMinute)) {
