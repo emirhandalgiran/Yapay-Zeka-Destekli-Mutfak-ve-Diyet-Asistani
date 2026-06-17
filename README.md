@@ -5,7 +5,7 @@
 [![Riverpod](https://img.shields.io/badge/Riverpod-v2.5+-0175C2?style=for-the-badge&logo=riverpod&logoColor=white)](https://riverpod.dev)
 [![Hive Database](https://img.shields.io/badge/Hive-NoSQL-FFC107?style=for-the-badge&logo=sqlite&logoColor=black)](https://pub.dev/packages/hive)
 [![AI Powered](https://img.shields.io/badge/AI-Groq%20%7C%20Llama3-orange?style=for-the-badge&logo=openai&logoColor=white)](https://groq.com)
-[![Academic Status](https://img.shields.io/badge/Topkapı%20Üniversitesi-Final%20Ödevi-green?style=for-the-badge)](STELLAR_ACADEMIC_DOCUMENTATION.md)
+[![Academic Status](https://img.shields.io/badge/Topkapı%20Üniversitesi-Final%20Ödevi-green?style=for-the-badge)](24010501018.md)
 
 ![AuraCook Showcase](assets/images/auracook_hero_banner.png)
 
@@ -270,7 +270,7 @@ lib/
 
 ---
 
-## 📘 Akademik Dokümantasyon
+## 📘 Proje Dokümantasyonu
 
-Projenin tüm akademik arka planını, Clean Architecture standartlarını ve karbon ayak izi tasarruf formüllerini detaylı olarak incelemek için:
-📘 **[Stellar Akademik Dokümantasyon (STELLAR_ACADEMIC_DOCUMENTATION.md)](STELLAR_ACADEMIC_DOCUMENTATION.md)** dosyasını ziyaret edebilirsiniz.
+Projenin detaylı açıklaması, klasör yapısı, kurulum adımları ve kaynakçası için:
+📘 **[24010501018.md](24010501018.md)** dosyasını ziyaret edebilirsiniz.
