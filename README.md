@@ -226,47 +226,74 @@ AuraCook'un geleceğe yönelik geliştirme ve ölçeklenebilirlik yol haritası 
 
 ---
 
-## 🚀 Tek Tıkla Kurulum ve Çalıştırma (1-Click Run & Deploy)
+## 🚀 Kurulum Adımları
 
-Projeyi test etmek için hiçbir geliştirme aracı (Flutter SDK, Android Studio, Visual Studio) kurmanıza gerek yoktur:
+Projeyi kendi bilgisayarınızda derlemek ve kurmak için aşağıdaki adımları uygulayınız:
 
-### Hazır Kurulum Paketleri (Releases) — *Tavsiye Edilen*
-Uygulamanın çalışması için gerekli tüm API anahtarları derleme aşamasında uygulamanın makine koduna güvenli bir şekilde gömülmüştür. Sıfır kurulumla doğrudan çalıştırabilirsiniz:
-*   **Windows Desktop:** Depomuzun sağ menüsündeki [Releases](https://github.com/emirhandalgiran/Yapay-Zeka-Destekli-Mutfak-ve-Diyet-Asistani/releases) sekmesine gidin. En güncel sürümün altındaki `auracook-windows.zip` dosyasını indirin. Klasöre çıkartıp doğrudan `aura_cook.exe` dosyasına çift tıklayarak uygulamayı anında açabilirsiniz.
-*   **Android:** Releases sekmesinden `auracook-android.apk` dosyasını telefonunuza indirip saniyeler içinde kurup kullanabilirsiniz.
+### Sistem Gereksinimleri
+*   Bilgisayarınızda **Flutter SDK** yüklü olmalıdır (Minimum v3.22+).
+*   Test için bir Android/iOS emülatörü veya bağlı bir fiziksel cihaz hazır bulunmalıdır.
+
+### Adım Adım Kurulum
+1.  **Depoyu Klonlayın:**
+    ```bash
+    git clone https://github.com/emirhandalgiran/Yapay-Zeka-Destekli-Mutfak-ve-Diyet-Asistani.git
+    cd Yapay-Zeka-Destekli-Mutfak-ve-Diyet-Asistani
+    ```
+2.  **Bağımlılıkları Yükleyin:**
+    ```bash
+    flutter pub get
+    ```
+3.  **Ortam Değişkenlerini Tanımlayın (.env):**
+    *   Projenin ana dizinindeki `.env.example` dosyasının adını `.env` olarak değiştirin.
+    *   Dosya içerisindeki `GROQ_API_KEY`, `FATSECRET_CLIENT_ID`, `FATSECRET_CLIENT_SECRET` alanlarına kendi API anahtarlarınızı yazın.
+
 ---
 
-## 🔒 API Güvenliği ve Ortam Değişkenleri (.env)
+## 💻 Çalıştırma / Kullanım Talimatları
 
-Yazılım güvenliği standartları gereği projemizin gizli API anahtarları (Groq AI, FatSecret, YouTube vb.) GitHub deposuna yüklenmemiştir ve `.gitignore` ile korunmaktadır.
-
-*   **Releases Kullanımı:** Yukarıdaki derlenmiş hazır paketlerde anahtarlar uygulama içerisine güvenli şekilde gömüldüğünden dolayı herhangi bir anahtar girmeniz gerekmez.
-*   **Kaynak Kodundan Geliştirme Yapmak:**
-    1. Depoda bulunan `.env.example` dosyasının adını `.env` olarak değiştirin.
-    2. Dosya içerisindeki ilgili alanlara kendi API anahtarlarınızı yazın.
-    3. *(Alternatif)* Proje tesliminde size ayrıca güvenli kanallardan (E-posta/USB vb.) iletilmiş olan hazır `.env` dosyasını projenin ana dizinine yapıştırıp doğrudan `flutter run` diyebilirsiniz.
-
----
-
-## 📂 Proje Klasör Yapısı (Clean Architecture)
-
-```text
-lib/
-├── core/
-│   ├── components/      # Paylaşılan ortak UI widget'ları (custom_user_avatar vb.)
-│   ├── constants/       # Global sabitler ve AppColors temaları
-│   ├── theme/           # Material 3 özel koyu/açık yeşil renk şeması
-│   └── utils/           # Yardımcı araçlar ve portion parser kodları
-├── features/            # Özellik Bazlı (Feature-First) Katmanlama
-│   ├── auth/            # Kullanıcı giriş, kayıt ve animasyonlu yetkilendirme ekranları
-│   ├── home/            # "Aura Dolabım" ve hızlı tarif önerileri barındıran anasayfa
-│   ├── recipes/         # Detaylı tarif adımları, porsiyonlama ve asistan ekranları
-│   ├── profile/         # Mutfak Auram, başarı kilitleri ve "Hakkımızda" akademik kartı
-│   ├── social/          # Topluluk akışı, reels ve veri paylaşımı
-│   └── hamburger_menu/  # Alışveriş listesi, yemek planlayıcı ve sağlık panelleri
-├── l10n/                # Türkçe/İngilizce dil çeviri arb dosyaları
-└── main.dart            # Uygulama başlangıç noktası ve dil/tema konfigürasyonu
+### Geliştirici Modunda Çalıştırma
+Cihazınız bağlıyken terminale şu komutu yazarak projeyi başlatabilirsiniz:
+```bash
+flutter run
 ```
+
+### Kod Üretimi (Riverpod & Hive İçin)
+Veri modellerinde veya provider katmanlarında değişiklik yapıldığında kod üreticileri tetiklemek için:
+```bash
+flutter pub run build_runner build --delete-conflicting-outputs
+```
+
+### Alternatif Çalıştırma (Hazır Paketler / Releases)
+Projeyi derleme araçları kurmadan doğrudan çalıştırmak isterseniz hazır sürüm paketlerimizi kullanabilirsiniz:
+*   **Windows Desktop:** [Releases](https://github.com/emirhandalgiran/Yapay-Zeka-Destekli-Mutfak-ve-Diyet-Asistani/releases) sekmesinden `auracook-windows.zip` indirin. Klasöre çıkartıp `aura_cook.exe` dosyasına çift tıklayarak çalıştırın.
+*   **Android:** Releases sekmesinden `auracook-android.apk` dosyasını telefonunuza indirip doğrudan kurun.
+
+### Uygulama İçi Temel Kullanım Adımları
+1.  **Malzeme Ekleme:** "Aura Dolabım" sayfasındaki emoji chiplerine dokunarak veya autocomplete arama çubuğunu kullanarak malzemelerinizi envanterinize ekleyin.
+2.  **Yapay Zekâ Şefi:** Seçtiğiniz malzemelerin detay kartına gidip "Tarife Dönüştür" butonuna basarak Groq Cloud (Llama 3) destekli sıfır atık tarifleri saniyeler içinde üretin.
+3.  **Eller Serbest Modu:** Pişirme ekranında sesli asistanı başlatarak dokunmadan "Sonraki", "Önceki", "Tekrar et" komutlarıyla adımları sesli dinleyip yönetin.
+4.  **Ekolojik Takip:** Kurtardığınız gıdaların karbon emisyon azaltım değerlerini profildeki grafiklerden ve kilitleri açılan rozetlerden takip edin.
+
+---
+
+## 🔗 GitHub Proje Bağlantısı
+
+Projenin tüm kaynak kodlarına, geçmiş commit geçmişine ve sürüm paketlerine aşağıdaki adresten erişebilirsiniz:
+
+*   **GitHub Repository:** [https://github.com/emirhandalgiran/Yapay-Zeka-Destekli-Mutfak-ve-Diyet-Asistani](https://github.com/emirhandalgiran/Yapay-Zeka-Destekli-Mutfak-ve-Diyet-Asistani)
+
+---
+
+## 📚 Kaynakça veya Yararlanılan Bağlantılar
+
+1.  **United Nations Environment Programme (UNEP) (2021).** *Food Waste Index Report 2021.* Nairobi.
+2.  **Food and Agriculture Organization (FAO) (2019).** *The State of Food and Agriculture 2019. Moving forward on food loss and waste reduction.* Rome.
+3.  **Intergovernmental Panel on Climate Change (IPCC) (2022).** *Climate Change 2022: Mitigation of Climate Change.* Cambridge University Press.
+4.  **Flutter Resmi Geliştirici Dokümantasyonu:** [https://docs.flutter.dev](https://docs.flutter.dev)
+5.  **Riverpod State Management Rehberi:** [https://riverpod.dev](https://riverpod.dev)
+6.  **Hive NoSQL Local Database:** [https://pub.dev/packages/hive](https://pub.dev/packages/hive)
+7.  **Groq Cloud Yapay Zekâ Geliştirici Paneli:** [https://groq.com](https://groq.com)
 
 ---
 
