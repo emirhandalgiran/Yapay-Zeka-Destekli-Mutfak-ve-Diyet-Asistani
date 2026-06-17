@@ -1,7 +1,7 @@
 # AuraCook: Sürdürülebilir Evsel Gıda Yönetimi ve Akıllı Mutfak Ekosistemi için Mobil Uygulama ve Oyunlaştırma Mimarisi
 
 **PP214 - Programlamada Yeni Eğilimler & BTE208 - Bilgisayar Teknolojilerinde Güncel Trendler Dersi Final Ödevi Raporu**  
-**Geliştirici:** Emirhan  
+**Geliştirici:** Cebrail Emirhan Dalgıran (Öğrenci No: 24010501018)  
 **Akademik Bağlam:** Topkapı Üniversitesi / PP214 & BTE208 Final Ödevi  
 **Proje Durumu:** Yayına Hazır (Production-Ready)  
 

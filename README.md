@@ -11,6 +11,8 @@
 
 > **Topkapı Üniversitesi - PP214: Programlamada Yeni Eğilimler & BTE208: Bilgisayar Teknolojilerinde Güncel Trendler Dersi Final Projesi**
 > 
+> **Geliştirici:** Cebrail Emirhan Dalgıran (Öğrenci No: 24010501018)
+> 
 > Evsel gıda israfını sıfırlamak ve mutfak alışkanlıklarınızı daha sürdürülebilir, reaktif ve eğlenceli hale getirmek için tasarlanmış, yapay zekâ destekli ve oyunlaştırma (gamification) odaklı Enterprise (Kurumsal) düzeyde mobil uygulama ekosistemi.
 
 ---
