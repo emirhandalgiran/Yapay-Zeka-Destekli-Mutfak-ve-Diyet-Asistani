@@ -19,7 +19,7 @@ class GroqRateLimiter {
 
   static const String _baseUrl = 'https://api.groq.com/openai/v1';
   static const String _defaultModel = 'llama-3.1-8b-instant';
-  static const String _fallbackModel = 'meta-llama/llama-4-scout-17b-16e-instruct';
+  static const String _fallbackModel = 'openai/gpt-oss-120b';
   
   static const int _maxRequestsPerMinute = 28; // slightly conservative under 30
   static const int _maxTokensPerMinute = 5800; // slightly conservative under 6000
