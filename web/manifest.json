@@ -1,11 +1,11 @@
 {
-    "name": "aura_cook",
-    "short_name": "aura_cook",
+    "name": "AuraCook",
+    "short_name": "AuraCook",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
     "theme_color": "#0175C2",
-    "description": "A new Flutter project.",
+    "description": "AuraCook - AI-Powered Smart & Sustainable Kitchen Assistant",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
     "icons": [
