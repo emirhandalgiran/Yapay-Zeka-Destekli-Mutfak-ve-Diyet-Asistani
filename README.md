@@ -5,13 +5,15 @@
 [![Riverpod](https://img.shields.io/badge/Riverpod-v2.5+-0175C2?style=for-the-badge&logo=riverpod&logoColor=white)](https://riverpod.dev)
 [![Hive Database](https://img.shields.io/badge/Hive-NoSQL-FFC107?style=for-the-badge&logo=sqlite&logoColor=black)](https://pub.dev/packages/hive)
 [![AI Powered](https://img.shields.io/badge/AI-Groq%20%7C%20Llama3-orange?style=for-the-badge&logo=openai&logoColor=white)](https://groq.com)
-[![Academic Status](https://img.shields.io/badge/Topkapı%20Üniversitesi-Final%20Ödevi-green?style=for-the-badge)](24010501018.md)
+[![Status](https://img.shields.io/badge/Status-Production%20Ready-green?style=for-the-badge)](#)
+[![Zero Waste](https://img.shields.io/badge/Initiative-Zero%20Waste-2e7d32?style=for-the-badge)](#)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](LICENSE)
 
 ![AuraCook Showcase](assets/images/auracook_hero_banner.png)
 
-> **Topkapı Üniversitesi - PP214: Programlamada Yeni Eğilimler & BTE208: Bilgisayar Teknolojilerinde Güncel Trendler Dersi Final Projesi**
+> **AuraCook: Yeni Nesil Yapay Zekâ Destekli Mutfak & Sürdürülebilir Beslenme Asistanı**
 > 
-> **Geliştirici:** Cebrail Emirhan Dalgıran (Öğrenci No: 24010501018)
+> **Geliştirici:** Cebrail Emirhan Dalgıran
 > 
 > Evsel gıda israfını sıfırlamak ve mutfak alışkanlıklarınızı daha sürdürülebilir, reaktif ve eğlenceli hale getirmek için tasarlanmış, yapay zekâ destekli ve oyunlaştırma (gamification) odaklı Enterprise (Kurumsal) düzeyde mobil uygulama ekosistemi.
 
@@ -40,7 +42,7 @@ AuraCook'un modern, temiz ve sürdürülebilirlik odaklı Material 3 arayüzün�
 2. [📱 Sayfa Sayfa Uygulama Haritası ve Özellikler](#sayfa-sayfa-uygulama-haritası-ve-özellikler)
 3. [🔌 Entegre API Servisleri ve Veri Akışı](#entegre-api-servisleri-ve-veri-akışı)
 4. [🛠️ Gelişmiş Mimari ve Teknoloji Yığını](#gelişmiş-mimari-ve-teknoloji-yığını)
-5. [📊 Akademik Ekolojik Etki ve Oyunlaştırma Matematik Modeli](#akademik-ekolojik-etki-ve-oyunlaştırma-matematik-modeli)
+5. [📊 Ekolojik Etki ve Oyunlaştırma Matematik Modeli](#ekolojik-etki-ve-oyunlaştırma-matematik-modeli)
 6. [🤖 Projede Kullanılan Yapay Zekâ (AI) Araçları](#projede-kullanılan-yapay-zekâ-ai-araçları)
 7. [✍️ Proje Prompt Kütüphanesi (Prompt Library)](#proje-prompt-kütüphanesi-prompt-library)
 8. [🔮 Gelecek Vizyonu (Future Vision)](#gelecek-vizyonu-future-vision)
@@ -49,7 +51,7 @@ AuraCook'un modern, temiz ve sürdürülebilirlik odaklı Material 3 arayüzün�
 11. [📂 Proje Klasör Yapısı (Clean Architecture)](#proje-klasör-yapısı-clean-architecture)
 12. [🔗 GitHub Proje Bağlantısı](#github-proje-bağlantısı)
 13. [📚 Kaynakça veya Yararlanılan Bağlantılar](#kaynakça-veya-yararlanılan-bağlantılar)
-14. [📘 Proje Dokümantasyonu](#proje-dokümantasyonu)
+14. [📄 Lisans ve Katkıda Bulunma](#lisans-ve-katkı)
 
 ---
 
@@ -58,7 +60,7 @@ AuraCook'un modern, temiz ve sürdürülebilirlik odaklı Material 3 arayüzün�
 
 Birleşmiş Milletler Çevre Programı (UNEP) verilerine göre küresel olarak üretilen gıdaların yaklaşık %40'ı tüketilmeden çöpe gitmektedir. Çöpe atılan her gıda, yalnızca ekonomik bir kayıp değil; üretim, lojistik ve soğutma zincirinde harcanan su, toprak ve enerji kaynaklarının da israf edilmesi demektir.
 
-**AuraCook**, evsel gıda yönetimini optimize etmek, sürdürülebilir mutfak alışkanlıkları kazandırmak ve gıda israfının karbon ayak izini azaltmak amacıyla geliştirilmiş akademik ve pratik bir çözümdür. Kullanıcının dolabındaki malzemeleri takip etmesini sağlar, bu malzemelerden **üretken yapay zekâ (LLM)** yardımıyla sıfır atık odaklı tarifler üretir ve eller serbest ses motoruyla pişirme sürecini asiste eder.
+**AuraCook**, evsel gıda yönetimini optimize etmek, sürdürülebilir mutfak alışkanlıkları kazandırmak ve gıda israfının karbon ayak izini azaltmak amacıyla geliştirilmiş bilimsel temelli ve yenilikçi bir çözümdür. Kullanıcının dolabındaki malzemeleri takip etmesini sağlar, bu malzemelerden **üretken yapay zekâ (LLM)** yardımıyla sıfır atık odaklı tarifler üretir ve eller serbest ses motoruyla pişirme sürecini asiste eder.
 
 ---
 
@@ -158,8 +160,8 @@ sequenceDiagram
 
 ---
 
-<a name="akademik-ekolojik-etki-ve-oyunlaştırma-matematik-modeli"></a>
-## 📊 Akademik Ekolojik Etki ve Oyunlaştırma Matematik Modeli
+<a name="ekolojik-etki-ve-oyunlaştırma-matematik-modeli"></a>
+## 📊 Ekolojik Etki ve Oyunlaştırma Matematik Modeli
 
 AuraCook, kurtarılan gıdaların ekolojik etkilerini uluslararası bilimsel standartlara (IPCC ve FAO verilerine) göre matematiksel olarak hesaplar.
 
@@ -190,7 +192,7 @@ $$AP = \left( \Delta C \times 100 \right) + \left( R \times 50 \right) + \left( 
 <a name="projede-kullanılan-yapay-zekâ-ai-araçları"></a>
 ## 🤖 Projede Kullanılan Yapay Zekâ (AI) Araçları
 
-Topkapı Üniversitesi - PP214: Programlamada Yeni Eğilimler & BTE208: Bilgisayar Teknolojilerinde Güncel Trendler dersi proje yönergesinde belirtilen kriterler doğrultusunda, AuraCook projesinin fikir geliştirme, tasarım, kodlama ve test aşamalarında aşağıdaki yapay zekâ araçlarından doğrudan yararlanılmıştır:
+AuraCook projesinin fikir geliştirme, mimari tasarım, kodlama, optimizasyon ve test aşamalarında modern üretken yapay zekâ (GenAI) araçlarından doğrudan yararlanılmıştır:
 
 | AI Aracı | Projedeki Kullanım Amacı | Entegrasyon Rolü |
 | :--- | :--- | :--- |
@@ -306,7 +308,7 @@ lib/
 │   ├── auth/            # Kullanıcı giriş, kayıt ve animasyonlu yetkilendirme ekranları
 │   ├── home/            # "Aura Dolabım" ve hızlı tarif önerileri barındıran anasayfa
 │   ├── recipes/         # Detaylı tarif adımları, porsiyonlama ve asistan ekranları
-│   ├── profile/         # Mutfak Auram, başarı kilitleri ve "Hakkımızda" akademik kartı
+│   ├── profile/         # Mutfak Auram, başarı kilitleri ve "Hakkımızda" vizyon kartı
 │   ├── social/          # Topluluk akışı, reels ve veri paylaşımı
 │   └── hamburger_menu/  # Alışveriş listesi, yemek planlayıcı ve sağlık panelleri
 ├── l10n/                # Türkçe/İngilizce dil çeviri arb dosyaları
@@ -337,8 +339,7 @@ Projenin tüm kaynak kodlarına, geçmiş commit geçmişine ve sürüm paketler
 
 ---
 
-<a name="proje-dokümantasyonu"></a>
-## 📘 Proje Dokümantasyonu
+<a name="lisans-ve-katkı"></a>
+## 📄 Lisans ve Katkıda Bulunma
 
-Projenin detaylı açıklaması, klasör yapısı, kurulum adımları ve kaynakçası için:
-📘 **[24010501018.md](24010501018.md)** dosyasını ziyaret edebilirsiniz.
+Bu proje [MIT Lisansı](LICENSE) kapsamında lisanslanmıştır. AuraCook, sürdürülebilir bir gelecek ve sıfır atık mutfak bilincini yaygınlaştırmak amacıyla geliştirilmiş açık kaynaklı bir ekosistemdir. Projeye katkıda bulunmak, hata bildirmek veya yeni özellik önermek için lütfen GitHub üzerinden bir Issue açabilir veya Pull Request (PR) gönderebilirsiniz.

@@ -1,6 +1,6 @@
 # 📒 AuraCook — Prompt Logbook
 
-> Her adımda verilen yönerge, yapılan işlem ve çıktıların kaydı.
+> AuraCook geliştirme sürecinde kullanılan master AI promptları, mühendislik kararları ve arayüz çıktılarının kaydı.
 
 > **Toplam Ekran Sayısı:** 14
 
@@ -359,16 +359,25 @@
 | **İşlevsel Kararlar** | OAuth1: `_generateSignature()` ile RFC3986 encode → parametre sıralama → HMAC-SHA1 imza → base64 encode. Autocomplete: 400ms debounce ile API çağrısı, en az 2 karakter. Türkçe çeviri: tam eşleşme → kelime bazlı fallback stratejisi, uzun ifadeler önce işlenir. Search results: infinite scroll pagination, type filter (Genel/Marka), kategori filtresi, barkod arama (bottom sheet), besin detay (DraggableScrollableSheet + nutrition table). Favoriye ekleme Firebase'e kaydeder. |
 | **API Endpointleri** | `foods.autocomplete.v2` (malzeme girişi önerileri), `foods.search.v5` (ana besin arama + filtre), `food_categories.get.v2` (kategori listesi), `food_sub_categories.get.v2` (alt kategori bilgisi — model'de parse), `food_brands.get.v2` (marka filtresi — hazır), `food.find_id_for_barcode.v2` (barkod arama), `food.create.v2` (yeni besin oluşturma — metod hazır) |
 | **Doğrulama** | ✅ `flutter pub get` başarılı, `flutter analyze` — yeni dosyalarda hata yok (pre-existing hatalar ilgisiz) |
-| **Notlar** | Consumer Key ve Secret `fatsecret_service.dart` içinde sabit olarak tanımlı. `food.create.v2` metodu hazır ancak UI'da henüz kullanılmıyor — ileride "Yeni Besin Ekle" özelliği ile aktifleştirilebilir. Türkçe çeviri sözlüğü genişletilebilir. | 
- # #   2 4   M a r t   2 0 2 6   -   F a t S e c r e t   &   G e m i n i   T r a n s l a t i o n   A P I   E n t e g r a s y o n u  
- * * s t e k : * *   F a t S e c r e t   A P I   � z e r i n d e n   y e m e k   a r a m a   ( 7   a d e t   e n d p o i n t )   b a l a n t 1s 1n 1n   s a l a n m a s 1.   G e l e n   n g i l i z c e   v e r i l e r i n   G o o g l e   G e m i n i   A P I ' s i   i l e   d i n a m i k   o l a r a k   ( v e   � c r e t s i z )   T � r k � e y e   � e v r i l e r e k   u y g u l a m a n 1n   T � r k � e   g � s t e r i l m e s i .  
- * * Y a p 1l a n l a r : * *  
- 1 .   \ F a t S e c r e t S e r v i c e \   k u r u l a r a k   O A u t h 1 . 0   ( H M A C - S H A 1 )   y e t k i l e n d i r m e s i   s a l a n d 1,   t � m   e n d p o i n t ' l e r   b a l a n d 1.  
- 2 .   \ G e m i n i T r a n s l a t i o n S e r v i c e \   o l u _t u r u l d u .   A u t o c o m p l e t e   � n e r i l e r i   v e   b e s i n   k a r t l a r 1  ( 2 0 ' l i   l i s t e l e r   h a l i n d e )   A P I   � z e r i n d e n   a s e n k r o n   _e k i l d e   � e v r i l d i .   P e r f o r m a n s   i � i n   b a s i t   b i r   C a c h e   y a p 1s 1  e k l e n d i .  
- 3 .   \ F o o d I t e m \   m o d e l i   g � n c e l l e n d i ;   v e r i l e r i n   i l k   b a _t a   n g i l i z c e   a l 1n 1p   � e v i r i   t a m a m l a n d 1k � a   U I ' d a   T � r k � e y e   d � n m e s i   s a l a n d 1.  
- 4 .   K u l l a n 1c 1  e k r a n l a r 1  ( A u t o c o m p l e t e   v e   S e a r c h   R e s u l t   S c r e e n )   a s e n k r o n   � e v i r i y e   u y u m l u   h a l e   g e t i r i l i p   b a l a n d 1.  
- 5 .   T � m   b u i l d   i _l e m l e r i   ( \  l u t t e r   a n a l y z e \ )   b a _a r 1y l a   t e s t   e d i l d i .  
- 
+| **Notlar** | Consumer Key ve Secret `fatsecret_service.dart` içinde sabit olarak tanımlı. `food.create.v2` metodu hazır ancak UI'da henüz kullanılmıyor — ileride "Yeni Besin Ekle" özelliği ile aktifleştirilebilir. Türkçe çeviri sözlüğü genişletilebilir. |
+
+## 24 Mart 2026 - FatSecret & Gemini Translation API Entegrasyonu
+
+**stek:** FatSecret API üzerinden yemek arama (7 adet endpoint) bağlantısının sağlanması. Gelen ngilizce verilerin Google Gemini API'si ile dinamik olarak (ve ücretsiz) Türkçeye çevrilerek uygulamanın Türkçe gösterilmesi.
+
+**Yapılanlar:**
+
+1. \FatSecretService\ kurularak OAuth1.0 (HMAC-SHA1) yetkilendirmesi sağlandı, tüm endpoint'ler bağlandı.
+
+2. \GeminiTranslationService\ oluşturuldu. Autocomplete önerileri ve besin kartları (20'li listeler halinde) API üzerinden asenkron şekilde çevrildi. Performans için basit bir Cache yapısı eklendi.
+
+3. \FoodItem\ modeli güncellendi; verilerin ilk başta ngilizce alınıp çeviri tamamlandıkça UI'da Türkçeye dönmesi sağlandı.
+
+4. Kullanıcı ekranları (Autocomplete ve Search Result Screen) asenkron çeviriye uyumlu hale getirilip bağlandı.
+
+5. Tüm build işlemleri (`flutter` analyze\) başarıyla test edildi.
+
+
 ---
 
 ## #11 - Final Polish & Fully Functional UI
@@ -380,9 +389,10 @@
 | **Kullanılan Skill'ler** | — |
 | **Oluşturulan Dosyalar** | lib/features/notifications/data/notifications_repository.dart, lib/features/notifications/notifications_screen.dart, lib/features/profile/allergy_edit_bottom_sheet.dart |
 | **Değiştirilen Dosyalar** | lib/core/di/service_locator.dart, lib/features/profile/kitchen_preferences_screen.dart, ve tüm ana sayfalardaki AppBar bileşenleri (home, social, aura, recipes, alisveris_listesi). |
-| **şlevsel Kararlar** | Boş veya statik olan "Bildirimler" (Zil) fonksiyonu, gerçek bir Firestore altyapısına bağlandı (boş state / veri listesi ile). Tüm ana sayfaların sağ üstündeki statik harfler (MA, JD), FirebaseAuth currentUser'ın dinamik baş harfine bağlandı. Mutfak Tercihleri ekranındaki "Alerji Listesini Düzenle" butonu boş bir fonksiyona sahipti; artık Firestore 'kitchenPreferences.allergies' alanına bağlanan ve alttan açılan (Bottom Sheet) gerçek bir menü üzerinden yönetilebiliyor. |
-| **Doğrulama** | ✅ AppBarlar, ServiceLocator.auth ve navigasyonu sorunsuz içeriyor. lutter analyze testine sokuldu. |
+| **İşlevsel Kararlar** | Boş veya statik olan "Bildirimler" (Zil) fonksiyonu, gerçek bir Firestore altyapısına bağlandı (boş state / veri listesi ile). Tüm ana sayfaların sağ üstündeki statik harfler (MA, JD), FirebaseAuth currentUser'ın dinamik baş harfine bağlandı. Mutfak Tercihleri ekranındaki "Alerji Listesini Düzenle" butonu boş bir fonksiyona sahipti; artık Firestore 'kitchenPreferences.allergies' alanına bağlanan ve alttan açılan (Bottom Sheet) gerçek bir menü üzerinden yönetilebiliyor. |
+| **Doğrulama** | ✅ AppBarlar, ServiceLocator.auth ve navigasyonu sorunsuz içeriyor. flutter analyze testine sokuldu. |
 | **Notlar** | Kapsamlı temizlik tamamlandı, "Yakında" yazan veya işlevsiz hiçbir UI elemanı ana ekranlarda kalmadı. |
+
 
 ---
 
@@ -394,10 +404,12 @@
 | **Prompt Özeti** | Uygulamadan premium/ücretli üyelik referanslarının kaldırılması ve kayıt ekranına galeriden profil fotoğrafı yükleme özelliğinin eklenmesi. |
 | **Kullanılan Skill'ler** | — |
 | **Oluşturulan Dosyalar** | Yok |
-| **Değiştirilen Dosyalar** | lib/features/profile/profile_screen.dart, lib/features/hamburger_menu/app_drawer.dart, lib/features/auth/auth_screen.dart, lib/core/auth/auth_repository.dart, home_screen.dart, social_screen.dart, ura_screen.dart, ecipes_screen.dart, lisveris_listesi_screen.dart |
-| **şlevsel Kararlar** | ProfileScreen içindeki statik Premium badge'i ve AppDrawer içindeki Pro Üyelik kartı silindi. uth_screen.dart üzerinde Kayıt sürecine (!_isLogin) image_picker paketi dahil edildi; fotoğrafı seçen kullanıcının resmi FirebaseStorage üzerinden buluta aktarılıp döndürülen indirme linki AuthRepository.createUserWithEmailAndPassword sonrası kullanıcının photoURL özelliğine atanıyor. Tüm AppBar avatarları da ServiceLocator.auth.currentUser?.photoURL doluysa NetworkImage, boşsa Email baş harfi gösterecek şekilde revize edildi. |
+| **Değiştirilen Dosyalar** | lib/features/profile/profile_screen.dart, lib/features/hamburger_menu/app_drawer.dart, lib/features/auth/auth_screen.dart, lib/core/auth/auth_repository.dart, home_screen.dart, social_screen.dart, ura_screen.dart, 
+ecipes_screen.dart, lisveris_listesi_screen.dart |
+| **İşlevsel Kararlar** | ProfileScreen içindeki statik Premium badge'i ve AppDrawer içindeki Pro Üyelik kartı silindi. uth_screen.dart üzerinde Kayıt sürecine (!_isLogin) image_picker paketi dahil edildi; fotoğrafı seçen kullanıcının resmi FirebaseStorage üzerinden buluta aktarılıp döndürülen indirme linki AuthRepository.createUserWithEmailAndPassword sonrası kullanıcının photoURL özelliğine atanıyor. Tüm AppBar avatarları da ServiceLocator.auth.currentUser?.photoURL doluysa NetworkImage, boşsa Email baş harfi gösterecek şekilde revize edildi. |
 | **Doğrulama** | ✅ AppBarlar profil resmi gösterebiliyor, Kayıt sayfasında fotoğraf yüklenebiliyor, tüm Premium kısımları koddan temizlendi. |
 | **Notlar** | Geriye hiçbir Premium veya Pro üyelik uyarısı kalmadı, uygulama tamamen Ücretsiz akışa oturtuldu. |
+
 
 ---
 
@@ -410,9 +422,10 @@
 | **Kullanılan Skill'ler** | — |
 | **Oluşturulan Dosyalar** | lib/features/onboarding/onboarding_screen.dart |
 | **Değiştirilen Dosyalar** | pubspec.yaml, lib/main.dart, Cihaz simge/splash dosyaları (Native) ve ilgili sayfalardaki (social_screen.dart, profile_screen.dart vb.) tüm Image.network widget'ları. |
-| **şlevsel Kararlar** | Resim kaydı (cache) işlemi için cached_network_image paketi entegre edildi. Ayrıca, native (doğal) ve hızlı açılış hissi uyandırabilmek için lutter_native_splash paketi dev_dependency olarak kullanılıp projenin logoları sisteme yüklendi. Uygulamayı ilk kez yükleyen kullanıcıyı asistan, sosyalleşme, ve sağlık unsurlarını anlatan görsel bir sunuma sokmak (PageView kullanımlı) amacıyla Onboarding tasarlandı. Bu bir kerelik deneyim kontrolü SharedPreferences ile sağlandı. |
+| **İşlevsel Kararlar** | Resim kaydı (cache) işlemi için cached_network_image paketi entegre edildi. Ayrıca, native (doğal) ve hızlı açılış hissi uyandırabilmek için flutter_native_splash paketi dev_dependency olarak kullanılıp projenin logoları sisteme yüklendi. Uygulamayı ilk kez yükleyen kullanıcıyı asistan, sosyalleşme, ve sağlık unsurlarını anlatan görsel bir sunuma sokmak (PageView kullanımlı) amacıyla Onboarding tasarlandı. Bu bir kerelik deneyim kontrolü SharedPreferences ile sağlandı. |
 | **Doğrulama** | ✅ Resimler artık tekrar indirilmiyor (cachelendi), Özelleştirilmiş Launcher logoları görünüyor, Ana karşılama tanıtımı (Onboarding) bir defaya mahsus gösteriliyor. |
 | **Notlar** | Proje bütünüyle üretim (Production) ve test kalitesine erişti, kullanıcı performansı için de market verimliliğine tam entegre edildi. |
+
 
 ---
 
@@ -421,13 +434,14 @@
 | Alan | Detay |
 |------|-------|
 | **Tarih** | 2026-03-24 |
-| **Prompt Ozeti** | Uygulamanin animasyonlarini daha guzel hale getir. Goze hitap etsin. Ayrica optimizasyon yap projeyi daha optimize hale getir fonsiyonelligini bozmadan. |
-| **Kullanilan Skill'ler** | - |
-| **Olusturulan Dosyalar** | Yok |
-| **Degistirilen Dosyalar** | lib/core/theme/app_theme.dart, lib/features/social/social_screen.dart, lib/features/home/home_screen.dart, lib/features/recipes/recipes_screen.dart, alisveris_listesi_screen.dart |
-| **Islevsel Kararlar** | flutter_animate paketi kurularak ana sayfalardaki grid/listelere (.fadeIn, .slide) eklendi. CupertinoPageTransitionsBuilder eklendi. Lint hatalari bitirildi ve Controllerlara dispose() eklendi. |
-| **Dogrulama** | flutter analyze temizlendi. Gecisler ve bellek yonetimi basarili. |
+| **Prompt Özeti** | Uygulamanin animasyonlarini daha guzel hale getir. Goze hitap etsin. Ayrica optimizasyon yap projeyi daha optimize hale getir fonsiyonelligini bozmadan. |
+| **Kullanılan Skill'ler** | - |
+| **Oluşturulan Dosyalar** | Yok |
+| **Değiştirilen Dosyalar** | lib/core/theme/app_theme.dart, lib/features/social/social_screen.dart, lib/features/home/home_screen.dart, lib/features/recipes/recipes_screen.dart, alisveris_listesi_screen.dart |
+| **İşlevsel Kararlar** | flutter_animate paketi kurularak ana sayfalardaki grid/listelere (.fadeIn, .slide) eklendi. CupertinoPageTransitionsBuilder eklendi. Lint hatalari bitirildi ve Controllerlara dispose() eklendi. |
+| **Doğrulama** | flutter analyze temizlendi. Gecisler ve bellek yonetimi basarili. |
 | **Notlar** | Proje yayina hazir (Production-Ready) duruma gelmistir. |
+
 
 ---
 
@@ -436,13 +450,14 @@
 | Alan | Detay |
 |------|-------|
 | **Tarih** | 2026-03-24 |
-| **Prompt �zeti** | Animasyonlar� ve ui/ux geli�tirmeleri yap. Projeyi bozulmayacak �ekilde fonksiyonelli�i duracak �ekilde optimize et, tekrar eden kodlar� birle�tir. |
-| **Kullan�lan Skill'ler** | - |
-| **Olu�turulan Dosyalar** | lib/core/components/custom_user_avatar.dart |
-| **De�i�tirilen Dosyalar** | lib/features/social/social_screen.dart, lib/features/home/home_screen.dart, lib/features/recipes/recipes_screen.dart, lib/features/auth/auth_screen.dart, lib/features/profile/profile_screen.dart, lib/features/hamburger_menu/alisveris_listesi_screen.dart vb. |
-| **�levsel Kararlar** | Clean code prensipleri gere�i tekrar eden profil foto�raf� �ekme (avatar) kodu tek bir bile�ende birle�tirildi. Hardcode renkler (Colors.white vb) AppColors sabitlerine �evrildi. Auth formuna flutter_animate Stagger (gecikmeli) y�klenme animasyonu eklendi. |
-| **Do�rulama** | Ba�ar�l�. Profil avatarlar�, giri� sayfas� animasyonlar� test edildi. |
-| **Notlar** | Projenin son dokunu�lar� ile uygulama tam anlam�yla �retime (Production) haz�r hale gelmi�tir. |
+| **Prompt Özeti** | Animasyonları ve ui/ux geliştirmeleri yap. Projeyi bozulmayacak şekilde fonksiyonelliği duracak şekilde optimize et, tekrar eden kodları birleştir. |
+| **Kullanılan Skill'ler** | - |
+| **Oluşturulan Dosyalar** | lib/core/components/custom_user_avatar.dart |
+| **Değiştirilen Dosyalar** | lib/features/social/social_screen.dart, lib/features/home/home_screen.dart, lib/features/recipes/recipes_screen.dart, lib/features/auth/auth_screen.dart, lib/features/profile/profile_screen.dart, lib/features/hamburger_menu/alisveris_listesi_screen.dart vb. |
+| **İşlevsel Kararlar** | Clean code prensipleri gereği tekrar eden profil fotoğrafı çekme (avatar) kodu tek bir bileşende birleştirildi. Hardcode renkler (Colors.white vb) AppColors sabitlerine çevrildi. Auth formuna flutter_animate Stagger (gecikmeli) yüklenme animasyonu eklendi. |
+| **Doğrulama** | Başarılı. Profil avatarları, giriş sayfası animasyonları test edildi. |
+| **Notlar** | Projenin son dokunuşları ile uygulama tam anlamıyla üretime (Production) hazır hale gelmiştir. |
+
 
 ---
 
@@ -454,24 +469,28 @@
 | **Prompt Özeti** | Faz 13 kapsamındaki sosyal, oyunlaştırma ve akıllı porsiyon özellikleri entegre edildi ve hata düzeltmeleri yapıldı. |
 | **Kullanılan Skill'ler** | - |
 | **Oluşturulan/Değiştirilen Dosyalar** | lib/features/social/data/social_repository.dart, vb. |
-| **şlevsel Kararlar** | flutter analyze ile tespit edilen derleme sorunları giderildi. |
+| **İşlevsel Kararlar** | flutter analyze ile tespit edilen derleme sorunları giderildi. |
 | **Doğrulama** | flutter analyze derleme hatalarından arındırıldı. |
 | **Notlar** | Faz 13 özellikleri başarıyla tamamlanmış ve projenin "Super App" konsepti güçlendirilmiştir. |
 
+
 ---
 
-## #17 - Phase 14 (AuraCook Super App Geni�lemesi ve Core Optimizasyonlar)
+## #17 - Phase 14 (AuraCook Super App Genişlemesi ve Core Optimizasyonlar)
 
 | Alan | Detay |
 |------|-------|
 | **Tarih** | 2026-04-03 |
-| **Prompt �zeti** | Eller Serbest Modu (Sesli Asistan), G�nl�k Ya�am Asistan� (Planlay�c�, Ak�ll� Liste), Sa�l�k ve Beslenme (Dashboard) dinamik olarak; Super App (Reels video) �zellikleri ise statik tasar�mla projeye eklensin. T�m proje kontrol edilsin, hatalar� giderilsin, kod cleanup ve optimizasyonu yap�ls�n. |
-| **Kullan�lan Skill'ler** | dart fix --apply, lutter analyze |
-| **Olu�turulan Dosyalar** | hands_free_cooking_screen.dart, meal_planner_screen.dart, smart_shopping_list_screen.dart, health_dashboard_screen.dart, eels_feed_screen.dart, offline_recipe_service.dart |
-| **De�i�tirilen Dosyalar** | pubspec.yaml, AndroidManifest.xml, Info.plist, ecipe_detail_screen.dart, main_navigation.dart, pp_drawer.dart + dart fix ile 19 dosya. |
-| **�levsel Kararlar** | Mikrofon i�in speech_to_text ve sesli okuma i�in lutter_tts entegre edildi. Hive ile offline k�t�phane altyap�s� geni�letildi. T�m proje ba�tan ba�a analiz edilip 63 adet clean code (const, unused imports, final locals vb.) optimizasyonu yap�ld�. Deprecated STT listener ayarlar� d�zeltildi. |
-| **Do�rulama** |  lutter analyze temiz. Lint hatalar� tamemen giderildi. Navigation stack bozulmadan men�ler birbirine te�ellendi. |
-| **Notlar** | AuraCook ba�tan sona eksiksiz, interaktif ve tamamen yeni nesil bir 'Super App' haline gelmi�tir. Clean code standartlar� sonuna kadar uygulanm��t�r. |
+| **Prompt Özeti** | Eller Serbest Modu (Sesli Asistan), Günlük Yaşam Asistanı (Planlayıcı, Akıllı Liste), Sağlık ve Beslenme (Dashboard) dinamik olarak; Super App (Reels video) özellikleri ise statik tasarımla projeye eklensin. Tüm proje kontrol edilsin, hataları giderilsin, kod cleanup ve optimizasyonu yapılsın. |
+| **Kullanılan Skill'ler** | dart fix --apply, flutter analyze |
+| **Oluşturulan Dosyalar** | hands_free_cooking_screen.dart, meal_planner_screen.dart, smart_shopping_list_screen.dart, health_dashboard_screen.dart, 
+reels_feed_screen.dart, offline_recipe_service.dart |
+| **Değiştirilen Dosyalar** | pubspec.yaml, AndroidManifest.xml, Info.plist, 
+recipe_detail_screen.dart, main_navigation.dart, pp_drawer.dart + dart fix ile 19 dosya. |
+| **İşlevsel Kararlar** | Mikrofon için speech_to_text ve sesli okuma için flutter_tts entegre edildi. Hive ile offline kütüphane altyapısı genişletildi. Tüm proje baştan başa analiz edilip 63 adet clean code (const, unused imports, final locals vb.) optimizasyonu yapıldı. Deprecated STT listener ayarları düzeltildi. |
+| **Doğrulama** |  flutter analyze temiz. Lint hataları tamemen giderildi. Navigation stack bozulmadan menüler birbirine teğellendi. |
+| **Notlar** | AuraCook baştan sona eksiksiz, interaktif ve tamamen yeni nesil bir 'Super App' haline gelmiştir. Clean code standartları sonuna kadar uygulanmıştır. |
+
 
 ---
 
@@ -480,10 +499,12 @@
 | Alan | Detay |
 |------|-------|
 | **Tarih** | 2026-04-03 |
-| **Prompt �zeti** | Uygulaman�n teknik mimarisini Enterprise kurumsal standarda �ek \(iverpod_generator ve i18n (l10n) eklentisi). |
-| **Kullan�lan Skill'ler** | lutter gen-l10n, dart run build_runner build -d, lutter analyze |
-| **Olu�turulan Dosyalar** | l10n.yaml, lib/l10n/app_tr.arb, lib/l10n/app_en.arb, user_preferences_provider.dart |
-| **De�i�tirilen Dosyalar** | pubspec.yaml, main.dart, main_navigation.dart |
-| **�levsel Kararlar** | Manuel Provider kal�plar�ndan @riverpod AutoDispose destekli annotasyonlu State Management Mimarisine ta��nma i�lemi i�in yap� olu�turuldu. Flutter'�n yerel �zelliklerinden lutter_localizations kurularak ilk dilekt �eviri i�lemleri Navigation Bar sekmelerinde uyguland�. |
-| **Do�rulama** | .g.dart kodlar� ba�ar�yla t�retildi, lutter gen-l10n build edildi. Sentaktik hi�bir sorun kalmad�. |
-| **Notlar** | Geli�tirme s�reci ve �l�eklenebilir altyap� resmi olarak tamamland�. Art�k projenin �oklu dil testleri yap�ld�. |
+| **Prompt Özeti** | Uygulamanın teknik mimarisini Enterprise kurumsal standarda çek \(
+iverpod_generator ve i18n (l10n) eklentisi). |
+| **Kullanılan Skill'ler** | flutter gen-l10n, dart run build_runner build -d, flutter analyze |
+| **Oluşturulan Dosyalar** | l10n.yaml, lib/l10n/app_tr.arb, lib/l10n/app_en.arb, user_preferences_provider.dart |
+| **Değiştirilen Dosyalar** | pubspec.yaml, main.dart, main_navigation.dart |
+| **İşlevsel Kararlar** | Manuel Provider kalıplarından @riverpod AutoDispose destekli annotasyonlu State Management Mimarisine taşınma işlemi için yapı oluşturuldu. Flutter'ın yerel özelliklerinden flutter_localizations kurularak ilk dilekt çeviri işlemleri Navigation Bar sekmelerinde uygulandı. |
+| **Doğrulama** | .g.dart kodları başarıyla türetildi, flutter gen-l10n build edildi. Sentaktik hiçbir sorun kalmadı. |
+| **Notlar** | Geliştirme süreci ve ölçeklenebilir altyapı resmi olarak tamamlandı. Artık projenin çoklu dil testleri yapıldı. |
+

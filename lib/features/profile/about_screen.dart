@@ -154,7 +154,7 @@ class AboutScreen extends StatelessWidget {
         const SizedBox(height: 14),
         _buildSustainabilityCard(),
         const SizedBox(height: 14),
-        _buildAcademicCard(),
+        _buildVisionCard(),
       ],
     );
   }
@@ -265,7 +265,7 @@ class AboutScreen extends StatelessWidget {
     );
   }
 
-  Widget _buildAcademicCard() {
+  Widget _buildVisionCard() {
     return Container(
       width: double.infinity,
       padding: const EdgeInsets.all(24),
@@ -280,7 +280,7 @@ class AboutScreen extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            'Proje Bağlamı',
+            'Teknoloji & İnovasyon',
             style: TextStyle(
               fontSize: 18,
               fontWeight: FontWeight.w700,
@@ -289,7 +289,7 @@ class AboutScreen extends StatelessWidget {
           ),
           const SizedBox(height: 14),
           Text(
-            'AuraCook, modern teknoloji ve çevresel verimlilik arasındaki sinerjiyi araştıran bir PP214 - Programlamada Yeni Eğilimler & BTE208 - Bilgisayar Teknolojilerinde Güncel Trendler Dersi Final Ödevi Projesi olarak hayata geçirilmiştir. Kullanıcı deneyimi tasarımı ve yapay zeka entegrasyonu üzerine odaklanan bu çalışma, gıda ekosisteminde dijital dönüşümü hedefler.',
+            'AuraCook, modern yapay zekâ teknolojileri ve çevresel verimlilik arasındaki sinerjiyi pratik bir çözüme dönüştüren açık kaynaklı ve bağımsız bir sürdürülebilirlik girişimidir. Kullanıcı deneyimi tasarımı ve üretken yapay zekâ entegrasyonu üzerine odaklanan platform, mutfaklarda sıfır atık kültürünü yaygınlaştırmayı ve gıda ekosisteminde dijital dönüşümü hedefler.',
             style: TextStyle(
               fontSize: 13,
               color: AppColors.onSurfaceVariant,
@@ -307,14 +307,14 @@ class AboutScreen extends StatelessWidget {
                   shape: BoxShape.circle,
                 ),
                 child: Icon(
-                  Icons.school,
+                  Icons.auto_awesome,
                   size: 16,
-                  color: AppColors.onSurfaceVariant,
+                  color: AppColors.primary,
                 ),
               ),
               const SizedBox(width: 10),
               Text(
-                'TOPKAPI ÜNİVERSİTESİ',
+                'AURACOOK INITIATIVE',
                 style: TextStyle(
                   fontSize: 11,
                   fontWeight: FontWeight.w800,
